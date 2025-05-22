@@ -37,6 +37,10 @@ def main():
             if ast.collision_check(player):
                 print("Game over!")
                 return
+            for bullet in shots:
+                if bullet.collision_check(ast):
+                    ast.split()
+                    bullet.kill()
 
         # screen.fill("black") - in the solution file
         pygame.Surface.fill(screen, color="black")
